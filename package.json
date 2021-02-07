@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:airdrop-data": "npm run fetch-airdrop-data && npm run build-master-data",
-    "fetch-airdrop-data": "ts-node scripts/fetch-airdrop-data.ts",
-    "build-master-data": "ts-node scripts/build-airdrop-account-master.ts"
+    "build:claimable-data": "npm run fetch-claimable-data && npm run build-master-data",
+    "fetch-claimable-data": "ts-node scripts/fetch-claimable-data.ts",
+    "build-master-data": "ts-node scripts/build-claimable-account-master.ts"
   },
   "dependencies": {
     "csv-parse": "^4.15.1",

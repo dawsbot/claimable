@@ -1,7 +1,7 @@
 import Head from "next/head";
 import "../styles/globals.css";
 
-const title = "Ethereum Airdrop Helper";
+const title = "Ethereum Claimable Helper";
 const description =
   "Everipedia brings real-world information onto the blockchain with our innovative OraQle product. Try it on Ethereum today.";
 // const previewImageSrc = `https://c48bdc683519.ngrok.io${electionMetaImageSrc}`;
