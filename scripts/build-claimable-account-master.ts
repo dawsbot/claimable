@@ -25,10 +25,10 @@ async function main() {
 
       // tornado csv does not have headers
       if (protocolName === "tornado") {
-        address = drop[0];
+        address = drop[0].toLowerCase();
         quantityDropped = drop[1];
       } else {
-        address = drop.address;
+        address = drop.address.toLowerCase();
         quantityDropped = drop[value.tokenNamed];
       }
 
@@ -52,7 +52,8 @@ async function main() {
       )
     );
 
-    for (const [address, value] of Object.entries(jsonContents)) {
+    for (const bigAddress of Object.keys(jsonContents)) {
+      const address = bigAddress.toLowerCase();
       if (masterData[address]) {
         // avoid overwriting existing networks
         masterData[address][protocolName] = "1";
@@ -62,28 +63,6 @@ async function main() {
         };
       }
     }
-    // ((drop) => {
-    //   let address;
-    //   let quantityDropped;
-
-    //   // tornado csv does not have headers
-    //   if (protocolName === "tornado") {
-    //     address = drop[0];
-    //     quantityDropped = drop[1];
-    //   } else {
-    //     address = drop.address;
-    //     quantityDropped = drop[value.tokenNamed];
-    //   }
-
-    //   if (masterData[address]) {
-    //     // avoid overwriting existing networks
-    //     masterData[address][protocolName] = quantityDropped;
-    //   } else {
-    //     masterData[drop.address] = {
-    //       [protocolName]: quantityDropped,
-    //     };
-    //   }
-    // });
   }
 
   fs.writeFileSync(
