@@ -15,12 +15,19 @@
     "next": "10.0.4",
     "node-fetch": "^2.6.1",
     "react": "17.0.1",
+    "react-confetti": "^6.0.0",
     "react-dom": "17.0.1",
+    "react-use": "^17.1.0",
+    "styled-components": "^5.2.1",
     "ts-node": "^9.1.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.24",
+    "@types/node-fetch": "^2.5.8",
     "@types/react": "^17.0.1",
+    "@types/react-dom": "17.0.0",
+    "@types/styled-components": "^5.1.7",
+    "babel-plugin-styled-components": "^1.12.0",
     "typescript": "^4.1.3"
   }
 }
