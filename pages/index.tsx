@@ -3,7 +3,8 @@ import Confetti from "react-confetti";
 
 import styles from "../styles/Home.module.css";
 import styled from "styled-components";
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
+import { ClaimPretty } from "../src/components/ClaimPretty";
 
 const Label = styled.label`
   font-weight: bold;
@@ -32,7 +33,7 @@ const LabelInput = styled.div`
   min-width: 40%;
 `;
 
-const initialResponseData = false;
+const initialResponseData = null;
 const initialErrorValue = "";
 export default function Home() {
   const { width, height } = useWindowSize();
@@ -88,10 +89,13 @@ export default function Home() {
         {loading && "loading..."}
         {error && <Error>{error}</Error>}
         {responseData && (
-          <code>
-            <Confetti width={width} height={height} />
-            <pre>{JSON.stringify(responseData, null, 4)}</pre>
-          </code>
+          <>
+            <code>
+              <Confetti width={width} height={height} />
+              <pre>{JSON.stringify(responseData, null, 4)}</pre>
+            </code>
+            <ClaimPretty claimables={responseData} />
+          </>
         )}
       </main>
 

@@ -2,6 +2,8 @@
 type AirDrop = {
   url: string;
   tokenNamed: string;
+  imgSrc?: string;
+  claimUrl?: string;
 };
 type AirDrops = {
   [tokenName: string]: AirDrop;
@@ -12,11 +14,17 @@ export const csvClaimables: AirDrops = {
       "https://raw.githubusercontent.com/banteg/uniswap-distribution/master/uniswap-distribution.csv",
     // tokens called "uni" in csv
     tokenNamed: "uni",
+
+    imgSrc: "/images/csv-claimables/uni.svg",
+    claimUrl: "https://app.uniswap.org/",
   },
   "1inch": {
     url:
       "https://gist.githubusercontent.com/banteg/12708815fb63239d9f28dec5df8641f9/raw/28a9dffe9d5681ef5f75b0ab6c39fe5ea0064712/1inch.csv",
     tokenNamed: "tokens",
+
+    imgSrc: "/images/csv-claimables/1inch.svg",
+    claimUrl: "https://1inch.exchange/",
   },
   // no csv header at all
   tornado: {

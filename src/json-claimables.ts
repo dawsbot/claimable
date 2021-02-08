@@ -1,6 +1,8 @@
 // original inspiration from https://gist.github.com/nicholashc/0b1be0c6308232ad559efdcda36f71cb
 type AirDrop = {
   url: string;
+  imgSrc?: string;
+  claimUrl?: string;
 };
 type AirDrops = {
   [tokenName: string]: AirDrop;
@@ -27,6 +29,9 @@ export const jsonClaimables: AirDrops = {
   "poap-eth2-genesis": {
     url:
       "https://raw.githubusercontent.com/poap-xyz/poap-delivery/development/app/src/lib/events/eth2-genesis.json",
+    imgSrc:
+      "/images/json-claimables/beacon-chain-genesis-depositor-2020-logo-1609033712464.png",
+    claimUrl: "https://poap.delivery/eth2-genesis/",
   },
   "poap-half-rekt": {
     url:
