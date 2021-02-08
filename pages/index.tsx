@@ -91,17 +91,15 @@ export default function Home() {
         {responseData && (
           <>
             <Confetti width={width} height={height} />
-            {/* <code>
-              <pre>{JSON.stringify(responseData, null, 4)}</pre>
-            </code> */}
             <ClaimPretty claimables={responseData} />
           </>
         )}
       </main>
 
-      {/* <footer className={styles.footer}>
-        <a href="https://earnifi.">Powered by Earnifi</a>
-      </footer> */}
+      <footer className={styles.footer}>
+        Notice: Some of these may have already been claimed. This UI currently
+        shows the initial snapshots of what your account was airdropped.
+      </footer>
     </div>
   );
 }
