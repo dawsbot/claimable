@@ -35,6 +35,22 @@ const LabelInput = styled.div`
   min-width: 40%;
 `;
 
+const SubscribeButton = styled.button`
+  font-weight: bold;
+  font-size: 20px;
+  padding: 16px 50px;
+  background-color: lightpink;
+  border-radius: 6px;
+  border: 2px solid black;
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+`;
+
 const initialResponseData = null;
 const initialErrorValue = "";
 export default function Home() {
@@ -77,14 +93,14 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        Want a notification when you have new money to claim?{" "}
+        Want to know when you have new money to claim? &nbsp;
         <a
           href="https://f0294d0e.sibforms.com/serve/MUIEALIgXjIm8XIXXOOoKbW5v87Rao_7T3FOViN4QRx5sD4OfrM0gBAXW8VSAX4WFJnUoCwN-1afQuZEKwxfRJzIp1PW0rxbEfU0hKJogE2YEmHqut6uoPJqSe-0NRfo35CVPzgSjX6H772gQtyuYYqo34nDsPIFpXOVuVacgIas-EmX-rwsxoSPTSXm6mU79GLqk8GoXS9vSl1j"
           style={{ color: "black", fontWeight: "bold" }}
           target="_blank"
           rel="noopener noreferrer"
         >
-          To hear about this for free, sign-up here
+          Sign-up for free notifications!
         </a>
       </header>
       <GHCorner
@@ -117,6 +133,13 @@ export default function Home() {
             <ClaimPretty claimables={responseData} />
           </>
         )}
+        <a
+          href="https://f0294d0e.sibforms.com/serve/MUIEALIgXjIm8XIXXOOoKbW5v87Rao_7T3FOViN4QRx5sD4OfrM0gBAXW8VSAX4WFJnUoCwN-1afQuZEKwxfRJzIp1PW0rxbEfU0hKJogE2YEmHqut6uoPJqSe-0NRfo35CVPzgSjX6H772gQtyuYYqo34nDsPIFpXOVuVacgIas-EmX-rwsxoSPTSXm6mU79GLqk8GoXS9vSl1j"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SubscribeButton>Tell me about new airdrops</SubscribeButton>
+        </a>
       </main>
 
       <footer className={styles.footer}>
