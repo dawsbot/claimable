@@ -1,20 +1,17 @@
 import ReactGA from "react-ga";
 export const initGA = () => {
-  console.log("initGA with id ", process.env.GA_TRACKING_ID);
-  ReactGA.initialize(process.env.GA_TRACKING_ID);
+  if (!(window as any).GA_INITIALIZED) {
+    ReactGA.initialize(process.env.GA_TRACKING_ID);
+    (window as any).GA_INITIALIZED = true;
+  }
 };
 export const logPageView = () => {
+  initGA();
   ReactGA.set({ page: window.location.pathname });
   ReactGA.pageview(window.location.pathname);
 };
-export const logSuccess = (address: string) => {
-  ReactGA.event({
-    category: "eth-address",
-    action: "submission",
-    label: address,
-  });
-};
 export const logException = (description = "", fatal = false) => {
+  initGA();
   if (description) {
     ReactGA.exception({ description, fatal });
   }

@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import styled from "styled-components";
 import React, { useCallback, useEffect, useState } from "react";
 import { ClaimPretty } from "../src/components/ClaimPretty";
-import { initGA, logPageView, logSuccess } from "../src/analytics";
+import { logPageView } from "../src/analytics";
 
 const Label = styled.label`
   font-weight: bold;
@@ -38,10 +38,6 @@ const initialResponseData = null;
 const initialErrorValue = "";
 export default function Home() {
   useEffect(() => {
-    if (!(window as any).GA_INITIALIZED) {
-      initGA();
-      (window as any).GA_INITIALIZED = true;
-    }
     logPageView();
   }, []);
 
@@ -72,7 +68,6 @@ export default function Home() {
         .then((res) => {
           // Confetti here
           setResponseData(res);
-          logSuccess(value);
         })
         .finally(() => setLoading(false));
     }
