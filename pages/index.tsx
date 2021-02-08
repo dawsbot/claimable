@@ -55,7 +55,7 @@ export default function Home() {
             return res.json();
           } else {
             setError(
-              "There are no claimable tokens nor POAPs for this address. Are you sure this is the address you want to check? "
+              "There are no claimable tokens nor POAPs for this address. Are you sure this is the address you want to check? ",
             );
             return;
           }

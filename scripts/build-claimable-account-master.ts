@@ -15,8 +15,8 @@ async function main() {
     const jsonContents = JSON.parse(
       fs.readFileSync(
         path.join(claimableDataDir, `${protocolName}.json`),
-        "utf8"
-      )
+        "utf8",
+      ),
     );
 
     jsonContents.forEach((drop) => {
@@ -48,8 +48,8 @@ async function main() {
     const jsonContents = JSON.parse(
       fs.readFileSync(
         path.join(claimableDataDir, `${protocolName}.json`),
-        "utf8"
-      )
+        "utf8",
+      ),
     );
 
     for (const bigAddress of Object.keys(jsonContents)) {
@@ -67,7 +67,7 @@ async function main() {
 
   fs.writeFileSync(
     path.join(claimableDataDir, `master-airdop-data.json`),
-    JSON.stringify(masterData, null, 2)
+    JSON.stringify(masterData, null, 2),
   );
 }
 

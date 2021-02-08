@@ -34,7 +34,7 @@ async function main() {
 
     fs.writeFileSync(
       path.join(claimableDataDir, `${protocolName}.json`),
-      JSON.stringify(jsonRes, null, 2)
+      JSON.stringify(jsonRes, null, 2),
     );
   }
 
@@ -44,7 +44,7 @@ async function main() {
 
     fs.writeFileSync(
       path.join(claimableDataDir, `${protocolName}.json`),
-      JSON.stringify(jsonRes, null, 2)
+      JSON.stringify(jsonRes, null, 2),
     );
   }
 }
