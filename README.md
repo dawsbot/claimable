@@ -21,9 +21,11 @@
 ## Want to add an airdrop or POAP?
 
 ### Option 1
+
 There are two good ways. One is to [open an issue](https://github.com/dawsbot/claimable/issues/new) and **link to the airdrop data source**. A link like this for example https://gist.githubusercontent.com/banteg/12708815fb63239d9f28dec5df8641f9/raw/28a9dffe9d5681ef5f75b0ab6c39fe5ea0064712/1inch.csv is all you need in the issue. I'll take care of the rest.
 
 ### Option 2
+
 1. Add the airdrop data source to the claimable lists.
 
 - If the source data is csv, add the file to the [csv-claimables](src/csv-claimables.ts).
@@ -37,7 +39,7 @@ There are two good ways. One is to [open an issue](https://github.com/dawsbot/cl
 ## Web App Development
 
 ```bash
-npm run dev
+npm i && npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "csv-parse": "^4.15.1",
+    "ethers": "^5.0.29",
     "next": "10.0.4",
     "node-fetch": "^2.6.1",
     "prettier": "^2.2.1",
