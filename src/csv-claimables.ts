@@ -29,13 +29,19 @@ export const csvClaimables: AirDrops = {
   // no csv header at all
   tornado: {
     url:
-      "https://raw.githubusercontent.com/tornadocash/claimable/master/claimable.csv",
+      "https://raw.githubusercontent.com/tornadocash/airdrop/master/airdrop.csv",
     tokenNamed: "no-header",
+
+    imgSrc: "/images/csv-claimables/torn.jpeg",
+    claimUrl: "https://app.tornado.cash/airdrop/",
   },
   badger: {
     url:
       "https://gist.githubusercontent.com/banteg/9ad5fdd2e169a03cc5d93478ece10a38/raw/9b14f2fd933d8a817ff6773e4d4854832b02c4b8/badger.csv",
     tokenNamed: "badger",
+
+    imgSrc: "/images/csv-claimables/badger.jpeg",
+    claimUrl: "https://app.badger.finance/airdrops",
   },
   furucombo: {
     url:
@@ -51,6 +57,9 @@ export const csvClaimables: AirDrops = {
     url:
       "https://gist.githubusercontent.com/nicholashc/f4a34c138087195237556077ea6490d7/raw/bfdf0a9886747dfe3465a2e8ea1bfb02ae0386ac/curve.csv",
     tokenNamed: " token",
+
+    imgSrc: "/images/csv-claimables/curve.jpeg",
+    claimUrl: "https://www.curve.fi/",
   },
   digg: {
     url:
