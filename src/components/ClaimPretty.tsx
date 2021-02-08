@@ -42,6 +42,7 @@ export const ClaimPretty = ({ claimables }) => {
               href={claimableData?.claimUrl}
               target="_blank"
               rel="noopener noreferrer"
+              key={claimableData?.claimUrl}
             >
               <Image src={imgSrc} width={120} height={120} />
               <div style={{ marginTop: "20px" }}>Click to claim</div>

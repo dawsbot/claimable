@@ -3,8 +3,9 @@ import Confetti from "react-confetti";
 
 import styles from "../styles/Home.module.css";
 import styled from "styled-components";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { ClaimPretty } from "../src/components/ClaimPretty";
+import { initGA, logPageView, logSuccess } from "../src/analytics";
 
 const Label = styled.label`
   font-weight: bold;
@@ -36,6 +37,14 @@ const LabelInput = styled.div`
 const initialResponseData = null;
 const initialErrorValue = "";
 export default function Home() {
+  useEffect(() => {
+    if (!(window as any).GA_INITIALIZED) {
+      initGA();
+      (window as any).GA_INITIALIZED = true;
+    }
+    logPageView();
+  }, []);
+
   const { width, height } = useWindowSize();
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
@@ -63,6 +72,7 @@ export default function Home() {
         .then((res) => {
           // Confetti here
           setResponseData(res);
+          logSuccess(value);
         })
         .finally(() => setLoading(false));
     }
@@ -74,13 +84,13 @@ export default function Home() {
         <h1 className={styles.title}>Claimable</h1>
         <p style={{ fontSize: "1.25rem", lineHeight: 1.6 }}>
           A place to see all the free things you can claim. <br />
-          Like airdrops and POAP's.
+          Like airdrops and POAPs.
         </p>
         <LabelInput>
           <Label>Ethereum Address:</Label>
           <Input
             value={address}
-            placeholder="0x123..."
+            placeholder="0x123... (ENS not yet supported)"
             onChange={handleAddressChange}
             disabled={loading}
           />
