@@ -7,8 +7,9 @@ import { csvClaimables } from "../csv-claimables";
 
 const Container = styled.div`
   display: flex;
-  /* flex-direction: column; */
+  margin-top: 40px;
 `;
+
 const ClaimableImg = styled(Image)`
   max-width: 140px;
 `;
@@ -23,7 +24,15 @@ const ClaimableAnchor = styled.a`
   text-align: center;
   text-decoration: none;
   color: black;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: all 0.2s;
+
+  :hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
 `;
+
 export const ClaimPretty = ({ claimables }) => {
   return (
     <Container>

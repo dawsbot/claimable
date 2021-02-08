@@ -18,8 +18,8 @@ const Input = styled.input`
   border-radius: 6px;
   border: 1px solid black;
   font-family: monospace;
-  /* min-width: 40%; */
   text-align: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
 const Error = styled.p`
@@ -90,10 +90,10 @@ export default function Home() {
         {error && <Error>{error}</Error>}
         {responseData && (
           <>
-            <code>
-              <Confetti width={width} height={height} />
+            <Confetti width={width} height={height} />
+            {/* <code>
               <pre>{JSON.stringify(responseData, null, 4)}</pre>
-            </code>
+            </code> */}
             <ClaimPretty claimables={responseData} />
           </>
         )}
