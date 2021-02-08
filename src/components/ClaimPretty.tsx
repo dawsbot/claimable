@@ -10,14 +10,10 @@ const Container = styled.div`
   margin-top: 40px;
 `;
 
-const ClaimableImg = styled(Image)`
-  max-width: 140px;
-`;
-
 const ClaimableAnchor = styled.a`
   border: 1px solid black;
   border-radius: 6px;
-  padding: 20px;
+  padding: 30px;
   margin: 6px;
   display: flex;
   flex-direction: column;
@@ -47,7 +43,7 @@ export const ClaimPretty = ({ claimables }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ClaimableImg src={imgSrc} width={140} height={140} />
+              <Image src={imgSrc} width={120} height={120} />
               <div style={{ marginTop: "20px" }}>Click to claim</div>
             </ClaimableAnchor>
           );

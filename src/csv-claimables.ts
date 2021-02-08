@@ -2,8 +2,8 @@
 type AirDrop = {
   url: string;
   tokenNamed: string;
-  imgSrc?: string;
-  claimUrl?: string;
+  imgSrc: string;
+  claimUrl: string;
 };
 type AirDrops = {
   [tokenName: string]: AirDrop;
@@ -47,11 +47,17 @@ export const csvClaimables: AirDrops = {
     url:
       "https://gist.githubusercontent.com/nicholashc/c96d6b41e33d1245ecdaaea33fa6fab0/raw/05d3042e034c2ea99d7084789962aa95a3330f04/combo.csv",
     tokenNamed: "tokens",
+
+    imgSrc: "/images/csv-claimables/furucombo.png",
+    claimUrl: "https://furucombo.app/",
   },
   stakeDAO: {
     url:
       "https://gist.githubusercontent.com/nicholashc/d380275aa8118e018906feeda3a92be5/raw/07f4a09dd657a27080cc75eda5e864acc030af5f/stakedao.csv",
     tokenNamed: "tokens",
+
+    imgSrc: "/images/csv-claimables/stake-DAO.jpg",
+    claimUrl: "https://stakedao.org/",
   },
   curve: {
     url:
@@ -65,5 +71,9 @@ export const csvClaimables: AirDrops = {
     url:
       "https://gist.githubusercontent.com/nicholashc/c21788b0f0391d0d2d2cdcc44940a0e3/raw/0dbdc85e0ebc4d2aaa7cda49d5aaeb903fef69c7/digg.csv",
     tokenNamed: " token",
+
+    imgSrc: "/images/csv-claimables/digg.png",
+    claimUrl:
+      "https://badgerdao.medium.com/digg-at-a-glance-complete-guide-d0dc2c29d303",
   },
 };
