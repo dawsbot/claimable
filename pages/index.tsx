@@ -108,8 +108,9 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        Notice: Some of these may have already been claimed. This UI currently
-        shows the initial snapshots of what your account was airdropped.
+        Notice: <b>Some of these may have already been claimed</b>. This UI
+        currently shows the initial snapshots of what your account was
+        airdropped.
       </footer>
     </div>
   );

@@ -65,7 +65,7 @@ export const csvClaimables: AirDrops = {
     tokenNamed: " token",
 
     imgSrc: "/images/csv-claimables/curve.jpeg",
-    claimUrl: "https://www.curve.fi/",
+    claimUrl: "https://dao.curve.fi/minter/vesting/",
   },
   digg: {
     url:
