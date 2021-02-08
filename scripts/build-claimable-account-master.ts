@@ -9,6 +9,8 @@ const claimableDataDir = path.resolve(__dirname, "..", "src", "claimable-data");
 
 const masterData = {};
 
+const sanitizeAddress = (address: string) => address.toLowerCase().trim();
+
 async function main() {
   // csv claimables
   for (const [protocolName, value] of Object.entries(csvClaimables)) {
@@ -25,10 +27,10 @@ async function main() {
 
       // tornado csv does not have headers
       if (protocolName === "tornado") {
-        address = drop[0].toLowerCase();
+        address = sanitizeAddress(drop[0]);
         quantityDropped = drop[1];
       } else {
-        address = drop.address.toLowerCase();
+        address = sanitizeAddress(drop.address);
         quantityDropped = drop[value.tokenNamed];
       }
 
@@ -53,7 +55,7 @@ async function main() {
     );
 
     for (const bigAddress of Object.keys(jsonContents)) {
-      const address = bigAddress.toLowerCase();
+      const address = sanitizeAddress(bigAddress);
       if (masterData[address]) {
         // avoid overwriting existing networks
         masterData[address][protocolName] = "1";

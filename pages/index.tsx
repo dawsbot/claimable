@@ -47,7 +47,7 @@ export default function Home() {
     setAddress(value);
     setError(initialErrorValue);
     setResponseData(initialResponseData);
-    if (value.length === 42) {
+    if (value.trim().length === 42) {
       setLoading(true);
       await fetch(`/api/claimable/${value}`)
         .then((res) => {
