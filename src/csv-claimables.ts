@@ -35,30 +35,33 @@ export const csvClaimables: AirDrops = {
     imgSrc: "/images/csv-claimables/torn.jpeg",
     claimUrl: "https://app.tornado.cash/airdrop/",
   },
-  badger: {
-    url:
-      "https://gist.githubusercontent.com/banteg/9ad5fdd2e169a03cc5d93478ece10a38/raw/9b14f2fd933d8a817ff6773e4d4854832b02c4b8/badger.csv",
-    tokenNamed: "badger",
+  // Badger no longer valid
+  // https://twitter.com/devinanderson/status/1358712533255933952?s=20
+  // badger: {
+  //   url:
+  //     "https://gist.githubusercontent.com/banteg/9ad5fdd2e169a03cc5d93478ece10a38/raw/9b14f2fd933d8a817ff6773e4d4854832b02c4b8/badger.csv",
+  //   tokenNamed: "badger",
 
-    imgSrc: "/images/csv-claimables/badger.jpeg",
-    claimUrl: "https://app.badger.finance/airdrops",
-  },
+  //   imgSrc: "/images/csv-claimables/badger.jpeg",
+  //   claimUrl: "https://app.badger.finance/airdrops",
+  // },
   furucombo: {
     url:
       "https://gist.githubusercontent.com/nicholashc/c96d6b41e33d1245ecdaaea33fa6fab0/raw/05d3042e034c2ea99d7084789962aa95a3330f04/combo.csv",
     tokenNamed: "tokens",
 
     imgSrc: "/images/csv-claimables/furucombo.png",
-    claimUrl: "https://furucombo.app/",
+    claimUrl: "https://furucombo.app/combo",
   },
-  stakeDAO: {
-    url:
-      "https://gist.githubusercontent.com/nicholashc/d380275aa8118e018906feeda3a92be5/raw/07f4a09dd657a27080cc75eda5e864acc030af5f/stakedao.csv",
-    tokenNamed: "tokens",
+  // https://twitter.com/harris_s0n/status/1358725157582303234?s=20
+  // stakeDAO: {
+  //   url:
+  //     "https://gist.githubusercontent.com/nicholashc/d380275aa8118e018906feeda3a92be5/raw/07f4a09dd657a27080cc75eda5e864acc030af5f/stakedao.csv",
+  //   tokenNamed: "tokens",
 
-    imgSrc: "/images/csv-claimables/stake-DAO.jpg",
-    claimUrl: "https://stakedao.org/",
-  },
+  //   imgSrc: "/images/csv-claimables/stake-DAO.jpg",
+  //   claimUrl: "https://stakedao.org/",
+  // },
   curve: {
     url:
       "https://gist.githubusercontent.com/nicholashc/f4a34c138087195237556077ea6490d7/raw/bfdf0a9886747dfe3465a2e8ea1bfb02ae0386ac/curve.csv",
@@ -67,13 +70,15 @@ export const csvClaimables: AirDrops = {
     imgSrc: "/images/csv-claimables/curve.jpeg",
     claimUrl: "https://dao.curve.fi/minter/vesting/",
   },
-  digg: {
-    url:
-      "https://gist.githubusercontent.com/nicholashc/c21788b0f0391d0d2d2cdcc44940a0e3/raw/0dbdc85e0ebc4d2aaa7cda49d5aaeb903fef69c7/digg.csv",
-    tokenNamed: " token",
+  // clawback expired
+  // https://twitter.com/devinanderson/status/1358721412509429761?s=20
+  // digg: {
+  //   url:
+  //     "https://gist.githubusercontent.com/nicholashc/c21788b0f0391d0d2d2cdcc44940a0e3/raw/0dbdc85e0ebc4d2aaa7cda49d5aaeb903fef69c7/digg.csv",
+  //   tokenNamed: " token",
 
-    imgSrc: "/images/csv-claimables/digg.png",
-    claimUrl:
-      "https://badgerdao.medium.com/digg-at-a-glance-complete-guide-d0dc2c29d303",
-  },
+  //   imgSrc: "/images/csv-claimables/digg.png",
+  //   claimUrl:
+  //     "https://badgerdao.medium.com/digg-at-a-glance-complete-guide-d0dc2c29d303",
+  // },
 };

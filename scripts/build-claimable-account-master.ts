@@ -36,10 +36,10 @@ async function main() {
 
       if (masterData[address]) {
         // avoid overwriting existing networks
-        masterData[address][protocolName] = quantityDropped;
+        masterData[address][protocolName] = quantityDropped.trim();
       } else {
         masterData[address] = {
-          [protocolName]: quantityDropped,
+          [protocolName]: quantityDropped.trim(),
         };
       }
     });
