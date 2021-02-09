@@ -7,7 +7,6 @@ import styled from "styled-components";
 import React, { useCallback, useEffect, useState } from "react";
 import { ClaimPretty } from "../src/components/ClaimPretty";
 import { logPageView } from "../src/analytics";
-import { ethers } from "ethers";
 
 const Label = styled.label`
   font-weight: bold;
@@ -65,19 +64,14 @@ export default function Home() {
   const [error, setError] = useState(initialErrorValue);
   const [responseData, setResponseData] = useState(initialResponseData);
 
-  const handleAddressChange = useCallback(async ({ target }) => {
-    const { value } = target;
-    const provider = new ethers.providers.JsonRpcProvider("$rpcEndpoint");
-    const ethHexAddress =
-      typeof value === "string" && value.includes(".eth")
-        ? await provider.resolveName(value)
-        : value;
-    setAddress(ethHexAddress);
+  const handleAddressChange = useCallback(async (e) => {
+    const { value } = e.target;
+    setAddress(value);
     setError(initialErrorValue);
     setResponseData(initialResponseData);
-    if (ethHexAddress.trim().length === 42) {
+    if (value.endsWith(".eth") || value.trim().length === 42) {
       setLoading(true);
-      await fetch(`/api/claimable/${ethHexAddress}`)
+      await fetch(`/api/claimable/${value}`)
         .then((res) => {
           if (res.ok) {
             return res.json();
@@ -125,7 +119,7 @@ export default function Home() {
           <Label>Ethereum Address:</Label>
           <Input
             value={address}
-            placeholder="0x123... (ENS not yet supported)"
+            placeholder="0x123... or yourname.eth"
             onChange={handleAddressChange}
             disabled={loading}
           />

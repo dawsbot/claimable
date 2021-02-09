@@ -1,12 +1,21 @@
 import { NextApiRequest, NextApiResponse } from "next";
-const masterClaimableData = require("../../../src/claimable-data/master-airdop-data.json");
+import { ethers } from "ethers";
 
+const masterClaimableData = require("../../../src/claimable-data/master-airdop-data.json");
 export default async (req: NextApiRequest, response: NextApiResponse<any>) => {
   let {
     query: { address },
-  } = req;
+  } = (req as any) as { query: { address: string } };
 
-  address = (address as string).toLowerCase();
+  // ENS resolve required
+  if (address.endsWith(".eth")) {
+    const provider = new ethers.providers.JsonRpcProvider(
+      process.env.INFURA_RPC_MAINNET,
+    );
+    address = await provider.resolveName(address);
+  }
+
+  address = address.toLowerCase();
   const matchingData = masterClaimableData[address];
   if (matchingData) {
     return response.send(matchingData);
