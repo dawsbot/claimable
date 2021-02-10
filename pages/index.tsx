@@ -53,7 +53,7 @@ const SubscribeButton = styled.button`
 
 const initialResponseData = null;
 const initialErrorValue = "";
-const validTlds = [".eth", ".xyz", ".ceo", ".kred", ".art"]; // source: https://app.ens.domains/name/[root]/subdomains
+const validTlds = [".eth", ".xyz", ".ceo", ".kred", ".art", ".luxe"]; // source: https://app.ens.domains/name/[root]/subdomains
 const isValidEns = (value: String) =>
   Boolean(validTlds.find((tld) => value.endsWith(tld)));
 
