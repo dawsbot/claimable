@@ -8,6 +8,11 @@ import { csvClaimables } from "../csv-claimables";
 const Container = styled.div`
   display: flex;
   margin-top: 40px;
+  flex-direction: row;
+  /* mobile  */
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const ClaimableAnchor = styled.a`

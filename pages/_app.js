@@ -1,7 +1,7 @@
 import Head from "next/head";
 import "../styles/globals.css";
 
-const title = "Claimable | Eth Tool";
+const title = "Claimable | Find airdrops and POAPs";
 const description =
   "Claimable helps Ethereum users find free money. We aggregate all known airdrops and POAP tokens on one page. Enter your public address and see if you have anything waiting to claim!";
 const previewImageSrc = "https://claimable.vercel.app/images/screenshot-v0.jpg";
