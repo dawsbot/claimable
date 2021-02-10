@@ -110,8 +110,7 @@ export default function Home() {
       </header>
       <GHCorner
         href="https://github.com/dawsbot/claimable"
-        // size={"calc(8vw + 30px)"}
-        size={"150px"}
+        size={"calc(8vw + 115px)"}
         bannerColor="lightpink"
       />
 
@@ -136,7 +135,6 @@ export default function Home() {
         {error && <Error>{error}</Error>}
         {responseData && (
           <>
-            {/* <Confetti width={width} height={height} /> */}
             <Confetti width={width} height={height} />
             <ClaimPretty claimables={responseData} />
           </>
@@ -156,13 +154,15 @@ export default function Home() {
           href={
             "https://etherscan.io/address/0xc0deaf6bd3f0c6574a6a625ef2f22f62a5150eab"
           }
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             textDecoration: "underline",
             color: "black",
             fontWeight: "bold",
           }}
         >
-          dawsbot.eth
+          dawsbot.eth (0xc0DEAF...)
         </a>
         Notice: Claimed items will still show
       </footer>
