@@ -59,7 +59,6 @@ const validTlds = [".eth", ".xyz", ".ceo", ".kred", ".art", ".luxe"]; // source:
 const isValidEns = (value: String) =>
   Boolean(validTlds.find((tld) => value.endsWith(tld)));
 
-// document.body.offsetHeight
 export default function Home() {
   useEffect(() => {
     logPageView();
