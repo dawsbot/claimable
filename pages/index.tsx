@@ -54,12 +54,9 @@ const SubscribeButton = styled.button`
 const initialResponseData = null;
 const initialErrorValue = "";
 const validTlds = [".eth", ".xyz", ".ceo", ".kred", ".art"]; // source: https://app.ens.domains/name/[root]/subdomains
-const isValidEns = (value: String) => {
-  for (const validTld of validTlds) {
-    if (value.endsWith(validTld)) return true;
-  }
-  return false;
-}
+const isValidEns = (value: String) =>
+  Boolean(validTlds.find((tld) => value.endsWith(tld)));
+
 export default function Home() {
   useEffect(() => {
     logPageView();
@@ -72,7 +69,7 @@ export default function Home() {
   const [responseData, setResponseData] = useState(initialResponseData);
 
   const handleAddressChange = useCallback(async (e) => {
-    const { value } = e.target;
+    const value = e.target.value.trim();
     setAddress(value);
     setError(initialErrorValue);
     setResponseData(initialResponseData);
