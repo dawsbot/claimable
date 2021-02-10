@@ -32,7 +32,8 @@ const Error = styled.p`
 const LabelInput = styled.div`
   display: flex;
   flex-direction: column;
-  min-width: 40%;
+  width: 80%;
+  max-width: 700px;
   margin-top: 10px;
 `;
 
@@ -43,7 +44,7 @@ const SubscribeButton = styled.button`
   background-color: lightpink;
   border-radius: 6px;
   border: 2px solid black;
-  margin-top: 20px;
+  margin-top: 30px;
   cursor: pointer;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 

@@ -10,7 +10,7 @@ const Container = styled.div`
   margin-top: 40px;
   flex-direction: row;
   /* mobile  */
-  @media (max-width: 800px) {
+  @media only screen and (max-width: 800px) {
     flex-direction: column;
   }
 `;
