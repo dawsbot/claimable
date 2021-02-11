@@ -22,7 +22,7 @@ async function main() {
     };
 
     // tornado csv does not have headers
-    if (protocolName === "tornado") {
+    if (protocolName === "tornado-cash") {
       parseOptions = {
         skip_empty_lines: true,
       };

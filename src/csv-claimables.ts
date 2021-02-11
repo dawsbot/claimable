@@ -5,25 +5,22 @@ export type AirDrop = {
   imgSrc: string;
   claimUrl: string;
 
-  // to show $ amount
-  displayName?: string;
-  coingeckoID?: string;
+  displayName: string;
 };
-type AirDrops = {
-  [tokenName: string]: AirDrop;
-};
-export const csvClaimables: AirDrops = {
+export type ProtocolName = keyof typeof csvClaimables;
+
+export const csvClaimables = {
+  // these names must corespond exactly to coingecko's token URL (https://www.coingecko.com/en/coins/uniswap)
   uniswap: {
     url:
       "https://raw.githubusercontent.com/banteg/uniswap-distribution/master/uniswap-distribution.csv",
     // tokens called "uni" in csv
     tokenNamed: "uni",
 
+    // displayed on UI
     imgSrc: "/images/csv-claimables/uni.svg",
     claimUrl: "https://app.uniswap.org/",
-
     displayName: "UNI",
-    coingeckoID: "uniswap",
   },
   "1inch": {
     url:
@@ -32,18 +29,17 @@ export const csvClaimables: AirDrops = {
 
     imgSrc: "/images/csv-claimables/1inch.svg",
     claimUrl: "https://1inch.exchange/",
-
     displayName: "1INCH",
-    coingeckoID: "1inch",
   },
   // no csv header at all
-  tornado: {
+  "tornado-cash": {
     url:
       "https://raw.githubusercontent.com/tornadocash/airdrop/master/airdrop.csv",
     tokenNamed: "no-header",
 
     imgSrc: "/images/csv-claimables/torn.jpeg",
     claimUrl: "https://app.tornado.cash/airdrop/",
+    displayName: "TORN",
   },
   // Badger no longer valid
   // https://twitter.com/devinanderson/status/1358712533255933952?s=20
@@ -62,6 +58,8 @@ export const csvClaimables: AirDrops = {
 
     imgSrc: "/images/csv-claimables/furucombo.png",
     claimUrl: "https://furucombo.app/combo",
+
+    displayName: "COMBO",
   },
   // https://twitter.com/harris_s0n/status/1358725157582303234?s=20
   // stakeDAO: {
@@ -72,13 +70,15 @@ export const csvClaimables: AirDrops = {
   //   imgSrc: "/images/csv-claimables/stake-DAO.jpg",
   //   claimUrl: "https://stakedao.org/",
   // },
-  curve: {
+  "curve-dao-token": {
     url:
       "https://gist.githubusercontent.com/nicholashc/f4a34c138087195237556077ea6490d7/raw/bfdf0a9886747dfe3465a2e8ea1bfb02ae0386ac/curve.csv",
     tokenNamed: " token",
 
     imgSrc: "/images/csv-claimables/curve.jpeg",
     claimUrl: "https://dao.curve.fi/minter/vesting/",
+
+    displayName: "CRV",
   },
   // clawback expired
   // https://twitter.com/devinanderson/status/1358721412509429761?s=20
@@ -91,4 +91,4 @@ export const csvClaimables: AirDrops = {
   //   claimUrl:
   //     "https://badgerdao.medium.com/digg-at-a-glance-complete-guide-d0dc2c29d303",
   // },
-};
+} as const;

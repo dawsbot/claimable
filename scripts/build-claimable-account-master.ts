@@ -26,7 +26,7 @@ async function main() {
       let quantityDropped;
 
       // tornado csv does not have headers
-      if (protocolName === "tornado") {
+      if (protocolName === "tornado-cash") {
         address = sanitizeAddress(drop[0]);
         quantityDropped = drop[1];
       } else {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import { jsonClaimables } from "../json-claimables";
-import { AirDrop, csvClaimables } from "../csv-claimables";
+import { AirDrop, csvClaimables, ProtocolName } from "../csv-claimables";
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +23,7 @@ const ClaimableAnchor = styled.a`
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
   text-decoration: none;
   color: black;
 
@@ -35,6 +36,10 @@ const ClaimableAnchor = styled.a`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-decoration: underline;
   }
+`;
+
+const ProtocolImage = styled(Image)`
+  border-radius: 6px;
 `;
 
 // hardcoded for now
@@ -52,32 +57,40 @@ const fetchPrices = (coingeckoIDs: string[]) => {
 var formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
+  minimumFractionDigits: 0,
   maximumFractionDigits: 0,
 });
 
+// snapshot does not have accurate pricing data for the following
+const priceBlacklist: ProtocolName[] = ["tornado-cash", "curve-dao-token"];
 export const ClaimPretty = ({ claimables }) => {
   const [prices, setPrices] = useState({});
   // componentDidMount
   useEffect(() => {
     fetchPrices(
-      Object.keys(claimables).filter(
-        (tokenName) => !tokenName.includes("poap"),
-      ),
+      Object.keys(claimables)
+        .filter((tokenName) => !tokenName.includes("poap"))
+        .filter(
+          (tokenName: ProtocolName) => !priceBlacklist.includes(tokenName),
+        ),
     ).then((priceData) => {
       setPrices(priceData);
     });
   }, []);
 
-  const computeValue = (claimableData: AirDrop, amount: string) => {
-    // not yet fetched
-    if (!prices[claimableData.coingeckoID]) {
+  const computeValue = (
+    protocolName: string,
+    claimableData: AirDrop,
+    amount: string,
+  ) => {
+    // not yet fetched or blacklisted
+    if (!prices[protocolName]) {
       return `${claimableData.displayName || ""} airdrop`;
     } else {
-      const unitPrice = prices[claimableData.coingeckoID][CURRENCY];
+      const unitPrice = prices[protocolName][CURRENCY];
       const totalValue = formatter.format(unitPrice * Number(amount));
       return `${totalValue} ${claimableData.displayName}`;
     }
-    // const tokenPrices = await fetchPrices()
   };
 
   return (
@@ -93,12 +106,23 @@ export const ClaimPretty = ({ claimables }) => {
             rel="noopener noreferrer"
             key={claimableData.claimUrl}
           >
-            <Image src={imgSrc} width={120} height={120} />
+            <div style={{ width: "120px", height: "120px" }}>
+              <ProtocolImage
+                src={imgSrc}
+                width={120}
+                height={120}
+                quality={100}
+              />
+            </div>
             <div style={{ marginTop: "20px" }}>
               Claim{" "}
               {protocolName.includes("poap")
                 ? "POAP"
-                : computeValue(claimableData as any, amount as string)}
+                : computeValue(
+                    protocolName,
+                    claimableData as any,
+                    amount as string,
+                  )}
             </div>
           </ClaimableAnchor>
         );
