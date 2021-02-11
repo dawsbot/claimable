@@ -62,7 +62,16 @@ var formatter = new Intl.NumberFormat("en-US", {
 });
 
 // snapshot does not have accurate pricing data for the following
-const priceBlacklist: ProtocolName[] = ["tornado-cash", "curve-dao-token"];
+const priceBlacklist: ProtocolName[] = [
+  // quantity in snapshot csv is bogus
+  "tornado-cash",
+  // quantity in snapshot csv is bogus
+  "curve-dao-token",
+  // Cannot verify exactly yet if the snapshot quantity is exact to real-life
+  // This user says 350 in snapshot and appears in transaction history to have claimed 218.75 COMBO
+  // https://etherscan.io/tx/0x91e3cc9df8655be1e7669a5bd110d17e945c907ec2397157cad6c91604b11a86
+  "furucombo",
+];
 export const ClaimPretty = ({ claimables }) => {
   const [prices, setPrices] = useState({});
   // componentDidMount
