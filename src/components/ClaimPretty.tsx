@@ -28,9 +28,12 @@ const ClaimableAnchor = styled.a`
 
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   transition: all 0.2s;
+  font-size: 17px;
+  font-weight: 500;
 
   :hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-decoration: underline;
   }
 `;
 
