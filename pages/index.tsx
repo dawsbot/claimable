@@ -162,7 +162,7 @@ export default function Home() {
             fontWeight: "bold",
           }}
         >
-          dawsbot.eth (0xc0DEAF...)
+          dawsbot.eth <code style={{ fontSize: "16px" }}>(0xc0DEAF...)</code>
         </a>
         Notice: Claimed items will still show
       </footer>

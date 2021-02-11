@@ -1,9 +1,13 @@
 // original inspiration from https://gist.github.com/nicholashc/0b1be0c6308232ad559efdcda36f71cb
-type AirDrop = {
+export type AirDrop = {
   url: string;
   tokenNamed: string;
   imgSrc: string;
   claimUrl: string;
+
+  // to show $ amount
+  displayName?: string;
+  coingeckoID?: string;
 };
 type AirDrops = {
   [tokenName: string]: AirDrop;
@@ -17,6 +21,9 @@ export const csvClaimables: AirDrops = {
 
     imgSrc: "/images/csv-claimables/uni.svg",
     claimUrl: "https://app.uniswap.org/",
+
+    displayName: "UNI",
+    coingeckoID: "uniswap",
   },
   "1inch": {
     url:
@@ -25,6 +32,9 @@ export const csvClaimables: AirDrops = {
 
     imgSrc: "/images/csv-claimables/1inch.svg",
     claimUrl: "https://1inch.exchange/",
+
+    displayName: "1INCH",
+    coingeckoID: "1inch",
   },
   // no csv header at all
   tornado: {
