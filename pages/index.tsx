@@ -34,7 +34,6 @@ const LabelInput = styled.div`
   flex-direction: column;
   width: 80%;
   max-width: 700px;
-  margin-top: 10px;
 `;
 
 const SubscribeButton = styled.button`

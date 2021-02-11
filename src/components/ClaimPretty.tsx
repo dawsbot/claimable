@@ -85,7 +85,7 @@ export const ClaimPretty = ({ claimables }) => {
   ) => {
     // not yet fetched or blacklisted
     if (!prices[protocolName]) {
-      return `${claimableData.displayName || ""} airdrop`;
+      return claimableData.displayName || "airdrop";
     } else {
       const unitPrice = prices[protocolName][CURRENCY];
       const totalValue = formatter.format(unitPrice * Number(amount));
