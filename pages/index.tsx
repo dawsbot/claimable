@@ -116,7 +116,7 @@ export default function Home() {
       </header>
       <GHCorner
         href="https://github.com/dawsbot/claimable"
-        size={"calc(8vw + 115px)"}
+        size={"220px"}
         bannerColor="lightpink"
       />
 

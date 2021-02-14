@@ -25,6 +25,7 @@
     "react-dom": "17.0.1",
     "react-ga": "^3.3.0",
     "react-github-corner": "^2.5.0",
+    "resize-observer": "^1.0.0",
     "styled-components": "^5.2.1",
     "ts-node": "^9.1.1",
     "use-resize-observer": "^7.0.0"
