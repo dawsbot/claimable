@@ -6,12 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "ts-node scripts/validate-env.ts",
     "build:claimable-data": "npm run fetch-claimable-data && npm run build-master-data",
     "fetch-claimable-data": "ts-node scripts/fetch-claimable-data.ts",
     "build-master-data": "ts-node scripts/build-claimable-account-master.ts"
   },
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@types/hapi__joi": "^17.1.6",
     "csv-parse": "^4.15.1",
+    "dotenv": "^8.2.0",
     "ethers": "^5.0.29",
     "next": "10.0.4",
     "node-fetch": "^2.6.1",
@@ -38,7 +42,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run build:claimable-data"
+      "pre-commit": "lint-staged && npm run build:claimable-data && npm test"
     }
   },
   "lint-staged": {
